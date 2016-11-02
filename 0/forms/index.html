@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <title>
+      Forms &middot; City of Oakland Primer
+    </title>
+
+    <link rel="stylesheet" href="../docs.css">
+
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" href="../img/apple-touch-icon-precomposed.png">
+    <link rel="icon" href="../favicon.ico">
+  </head>
+  
+    
+  
+  <body class="docs clearfix pattern-portfolio">
+  
+
+    <div class="global-navigation-wrap">
+  <nav role="navigation" class="global-navigation one-fourth">
+
+    <div class="site-logo-wrap">
+      <img class="site-logo logo-white" src="../img/coo-logo-white.svg" alt="City of Oakland" />
+      <a class="header-nav-button navicon-button x open" href="#">
+        <div class="navicon"></div>
+      </a>
+    </div>
+
+    <ul class="top-level-menu nav-menu">
+      <li>
+        <a class="menu-item " href="../"><strong>Introduction</strong></a>
+      </li>
+    </ul>
+
+    
+    <ul class="top-level-menu nav-menu ">
+      <li>
+        <a href="#" class="menu-item sub-menu-toggle "><strong>Visual Identity</strong></a>
+        <ul class="nav-sub-menu nav-menu">
+          <li>
+            <a class="menu-item " href="../visual-identity-intro/">
+              Introduction
+            </a>
+          </li>
+          <li>
+            <a class="menu-item " href="../identity/">
+              Identity
+            </a>
+          </li>
+          <li>
+            <a class="menu-item " href="../typography/">
+              Typography
+            </a>
+          </li>
+          <li>
+            <a class="menu-item " href="../color/">
+              Color
+            </a>
+          </li>
+          <li>
+            <a class="menu-item " href="../visual-elements/">
+              Visual Elements
+            </a>
+          </li>
+          <li>
+            <a class="menu-item " href="../examples/">
+              Examples
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    
+    
+    <ul class="top-level-menu nav-menu open">
+      <li>
+        <a href="#" class="menu-item sub-menu-toggle "><strong>Pattern Portfolio</strong></a>
+        <ul class="nav-sub-menu nav-menu">
+          <li>
+            <a class="menu-item " href="../pattern-portfolio-intro/">
+              Introduction
+            </a>
+          </li>
+          <li>
+            <a class="menu-item " href="../web-typography/">
+              Web Typography
+            </a>
+          </li>
+          <li>
+            <a class="menu-item " href="../buttons/">
+              Buttons
+            </a>
+          </li>
+          <li>
+            <a class="menu-item selected" href="../forms/">
+              Forms
+            </a>
+          </li>
+          <li>
+            <a class="menu-item " href="../images/">
+              Images
+            </a>
+          </li>
+          <li>
+            <a class="menu-item " href="../modules/">
+              Modules
+            </a>
+          </li>
+          <li>
+            <a class="menu-item " href="../developers/">
+              Developers
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <ul class="top-level-menu nav-menu">
+      <a href="#" class="menu-item sub-menu-toggle"><strong>Page Templates</strong></a>
+      <ul class="nav-sub-menu nav-menu">
+        <li>
+        <a class="menu-item" href="../home/" target="_blank">
+          Home Template
+        </a>
+      </li>
+      <li>
+        <a class="menu-item" href="../basic/" target="_blank">
+          Landing Page Template
+        </a>
+      </li>
+      <li>
+        <a class="menu-item" href="../terminal/" target="_blank">
+          Terminal Template
+        </a>
+      </li>
+      <li>
+        <a class="menu-item" href="../parks/" target="_blank">
+          Parks and Rec Template
+        </a>
+      </li>
+    </ul>
+
+  </nav>
+</div>
+
+
+    <main class="three-fourths column-last right">
+
+      <header class="masthead">
+        <div class="container">
+          <a class="header-nav-button navicon-button x" href="#">
+            <div class="navicon"></div>
+          </a>
+          <a href="../" class="masthead-logo">
+            Design Toolkit
+          </a>
+          
+          
+          <span class="muted">Pattern Portfolio</span>
+          
+          
+          
+          <span class="page-title">Forms</span>
+          
+        </div>
+      </header>
+
+    
+    
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="page-title">Forms</h1>
+        </div>
+      </div>
+    
+
+      <div class="container">
+        <p>Style individual form controls and utilize common layouts.</p>
+
+<h2 id="contents">Contents</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#contents" id="markdown-toc-contents">Contents</a></li>
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#example-form" id="markdown-toc-example-form">Example form</a></li>
+</ul>
+
+<h2 id="overview">Overview</h2>
+
+<ul>
+  <li>We reset several elements’ default styles for cross browser consistency and easier manipulation later. This includes <code>&lt;fieldset&gt;</code>s, WebKit validation bubbles, and most textual <code>&lt;input&gt;</code>s.</li>
+  <li>Specific types of textual <code>&lt;input&gt;</code>s are styled automatically, but <code>.form-control</code> is available should you need it.</li>
+  <li>Always declare a <code>type</code> on your <code>&lt;button&gt;</code>s.</li>
+  <li>Form layouts rely on form groups.</li>
+</ul>
+
+<h2 id="example-form">Example form</h2>
+
+<p>Form controls have no basic layout specified (this is by design). You’ll need to use <code>&lt;fieldset&gt;</code>s, <code>&lt;div&gt;</code>s, or other elements and styles to rearrange them.</p>
+
+<div class="docs-example clearfix"><form>
+  <label for="first-name">
+    Name<br />
+    Example Text
+    <input type="text" id="first-name" />
+  </label>
+  <a href="#" class="form-info">Where can I find more info about this?</a>
+
+  <label for="email-address">
+    Email address
+    <input type="email" id="email-address" />
+  </label>
+
+  <label for="user-comment">
+    Enter your comments here
+    <textarea name="user-comment" id="user-comment" cols="30" rows="10"></textarea>
+  </label>
+
+  <div class="form-group">
+    <p>Do you live in Oakland, CA?</p>
+    <label for="yep" class="form-radio">
+      <input type="radio" id="yep" name="yepnope" />Yep
+    </label>
+    <label for="nope" class="form-radio">
+      <input type="radio" id="nope" name="yepnope" />Nope
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label for="remember-me" class="form-checkbox">
+      <input type="checkbox" id="remember-me" />Remember me
+    </label>
+  </div>
+
+  <button class="btn arrow-right" type="submit">Submit</button>
+</form></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"first-name"</span><span class="nt">&gt;</span>
+    Name<span class="nt">&lt;br&gt;</span>
+    Example Text
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"first-name"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"form-info"</span><span class="nt">&gt;</span>Where can I find more info about this?<span class="nt">&lt;/a&gt;</span>
+
+  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"email-address"</span><span class="nt">&gt;</span>
+    Email address
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"email"</span> <span class="na">id=</span><span class="s">"email-address"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/label&gt;</span>
+
+  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"user-comment"</span><span class="nt">&gt;</span>
+    Enter your comments here
+    <span class="nt">&lt;textarea</span> <span class="na">name=</span><span class="s">"user-comment"</span> <span class="na">id=</span><span class="s">"user-comment"</span> <span class="na">cols=</span><span class="s">"30"</span> <span class="na">rows=</span><span class="s">"10"</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+  <span class="nt">&lt;/label&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Do you live in Oakland, CA?<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"yep"</span> <span class="na">class=</span><span class="s">"form-radio"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">id=</span><span class="s">"yep"</span> <span class="na">name=</span><span class="s">"yepnope"</span><span class="nt">&gt;</span>Yep
+    <span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"nope"</span> <span class="na">class=</span><span class="s">"form-radio"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">id=</span><span class="s">"nope"</span> <span class="na">name=</span><span class="s">"yepnope"</span><span class="nt">&gt;</span>Nope
+    <span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"remember-me"</span> <span class="na">class=</span><span class="s">"form-checkbox"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"remember-me"</span><span class="nt">&gt;</span>Remember me
+    <span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn arrow-right"</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/form&gt;</span></code></pre></div>
+
+<!-- ## Form contrast
+
+Textual form controls have a white background by default. You can change this to a light gray with `.input-contrast`.
+
+
+<div class="docs-example clearfix"><form>
+  <input type="text" placeholder="Default input">
+  <input class="input-contrast" type="text" placeholder="Input with contrast">
+</form></div><div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">"Default input"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"input-contrast"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">"Input with contrast"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span></code></pre></div>
+
+
+## Selects
+
+Primer adds light `height` and `vertical-align` styles to `<select>`s for all browsers to render them consistently with textual inputs.
+
+
+<div class="docs-example clearfix"><form>
+  <select>
+    <option>Choose an option</option>
+    <option>Git</option>
+    <option>Subversion</option>
+    <option>Social Coding</option>
+    <option>Beets</option>
+    <option>Bears</option>
+    <option>Battlestar Galactica</option>
+  </select>
+</form></div><div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form&gt;</span>
+  <span class="nt">&lt;select&gt;</span>
+    <span class="nt">&lt;option&gt;</span>Choose an option<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;option&gt;</span>Git<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;option&gt;</span>Subversion<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;option&gt;</span>Social Coding<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;option&gt;</span>Beets<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;option&gt;</span>Bears<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;option&gt;</span>Battlestar Galactica<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;/select&gt;</span>
+<span class="nt">&lt;/form&gt;</span></code></pre></div>
+
+
+### Custom
+
+Custom `<select>`s are also available—just add `.select`. **Only available in latest WebKit, Firefox, and IE browsers.**
+
+
+<div class="docs-example clearfix"><form>
+  <select class="select">
+    <option>Choose an option</option>
+    <option>Git</option>
+    <option>Subversion</option>
+    <option>Social Coding</option>
+    <option>Beets</option>
+    <option>Bears</option>
+    <option>Battlestar Galactica</option>
+  </select>
+</form></div><div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form&gt;</span>
+  <span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">"select"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;option&gt;</span>Choose an option<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;option&gt;</span>Git<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;option&gt;</span>Subversion<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;option&gt;</span>Social Coding<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;option&gt;</span>Beets<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;option&gt;</span>Bears<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;option&gt;</span>Battlestar Galactica<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;/select&gt;</span>
+<span class="nt">&lt;/form&gt;</span></code></pre></div>
+
+
+### Small
+
+Use the `.select-sm` class to resize both default and custom `<select>`s to match the size of [our small buttons](/buttons/#default-buttons).
+
+
+<div class="docs-example clearfix"><select class="select-sm">
+  <option>Choose an option</option>
+  <option>Git</option>
+  <option>Subversion</option>
+  <option>Social Coding</option>
+  <option>Beets</option>
+  <option>Bears</option>
+  <option>Battlestar Galactica</option>
+</select>
+
+<select class="select select-sm">
+  <option>Choose an option</option>
+  <option>Git</option>
+  <option>Subversion</option>
+  <option>Social Coding</option>
+  <option>Beets</option>
+  <option>Bears</option>
+  <option>Battlestar Galactica</option>
+</select></div><div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">"select-sm"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;option&gt;</span>Choose an option<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>Git<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>Subversion<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>Social Coding<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>Beets<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>Bears<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>Battlestar Galactica<span class="nt">&lt;/option&gt;</span>
+<span class="nt">&lt;/select&gt;</span>
+
+<span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">"select select-sm"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;option&gt;</span>Choose an option<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>Git<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>Subversion<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>Social Coding<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>Beets<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>Bears<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>Battlestar Galactica<span class="nt">&lt;/option&gt;</span>
+<span class="nt">&lt;/select&gt;</span></code></pre></div>
+
+
+## Form groups
+
+
+<div class="docs-example clearfix"><form>
+  <dl class="form">
+    <dt><label>Example Text</label></dt>
+    <dd><input type="text" value="Example Value"></dd>
+  </dl>
+
+  <dl class="form">
+    <dt><label>Example Label</label></dt>
+    <dd>
+      <select class="select">
+        <option>Choose an option</option>
+        <option>Git</option>
+        <option>Subversion</option>
+        <option>Social Coding</option>
+        <option>Beets</option>
+        <option>Bears</option>
+        <option>Battlestar Galactica</option>
+      </select>
+    </dd>
+  </dl>
+</form></div><div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form&gt;</span>
+  <span class="nt">&lt;dl</span> <span class="na">class=</span><span class="s">"form"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;dt&gt;&lt;label&gt;</span>Example Text<span class="nt">&lt;/label&gt;&lt;/dt&gt;</span>
+    <span class="nt">&lt;dd&gt;&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">value=</span><span class="s">"Example Value"</span><span class="nt">&gt;&lt;/dd&gt;</span>
+  <span class="nt">&lt;/dl&gt;</span>
+
+  <span class="nt">&lt;dl</span> <span class="na">class=</span><span class="s">"form"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;dt&gt;&lt;label&gt;</span>Example Label<span class="nt">&lt;/label&gt;&lt;/dt&gt;</span>
+    <span class="nt">&lt;dd&gt;</span>
+      <span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">"select"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;option&gt;</span>Choose an option<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option&gt;</span>Git<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option&gt;</span>Subversion<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option&gt;</span>Social Coding<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option&gt;</span>Beets<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option&gt;</span>Bears<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option&gt;</span>Battlestar Galactica<span class="nt">&lt;/option&gt;</span>
+      <span class="nt">&lt;/select&gt;</span>
+    <span class="nt">&lt;/dd&gt;</span>
+  <span class="nt">&lt;/dl&gt;</span>
+<span class="nt">&lt;/form&gt;</span></code></pre></div>
+
+
+## Form group validation
+
+Convey errors and warnings for form groups. Add the appropriate class—either `.errored` or `.warn`—to the `<dl class="form">` to start. Then, house your error messaging in an additional `<dd>` with either `.error` or `.warning`.
+
+
+<div class="docs-example clearfix"><form>
+  <dl class="form errored">
+    <dt><label>Example Text</label></dt>
+    <dd><input type="text" value="Example Value"></dd>
+    <dd class="error">This example input has an error.</dd>
+  </dl>
+  <br>
+  <dl class="form warn">
+    <dt><label>Example Text</label></dt>
+    <dd><input type="text" value="Example Value"></dd>
+    <dd class="warning">This example input has a warning.</dd>
+  </dl>
+</form></div><div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form&gt;</span>
+  <span class="nt">&lt;dl</span> <span class="na">class=</span><span class="s">"form errored"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;dt&gt;&lt;label&gt;</span>Example Text<span class="nt">&lt;/label&gt;&lt;/dt&gt;</span>
+    <span class="nt">&lt;dd&gt;&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">value=</span><span class="s">"Example Value"</span><span class="nt">&gt;&lt;/dd&gt;</span>
+    <span class="nt">&lt;dd</span> <span class="na">class=</span><span class="s">"error"</span><span class="nt">&gt;</span>This example input has an error.<span class="nt">&lt;/dd&gt;</span>
+  <span class="nt">&lt;/dl&gt;</span>
+  <span class="nt">&lt;br&gt;</span>
+  <span class="nt">&lt;dl</span> <span class="na">class=</span><span class="s">"form warn"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;dt&gt;&lt;label&gt;</span>Example Text<span class="nt">&lt;/label&gt;&lt;/dt&gt;</span>
+    <span class="nt">&lt;dd&gt;&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">value=</span><span class="s">"Example Value"</span><span class="nt">&gt;&lt;/dd&gt;</span>
+    <span class="nt">&lt;dd</span> <span class="na">class=</span><span class="s">"warning"</span><span class="nt">&gt;</span>This example input has a warning.<span class="nt">&lt;/dd&gt;</span>
+  <span class="nt">&lt;/dl&gt;</span>
+<span class="nt">&lt;/form&gt;</span></code></pre></div>
+
+
+## Checkboxes and radios
+
+Utilities to spice up the alignment and styling of checkbox and radio controls.
+
+
+<div class="docs-example clearfix"><form>
+  <div class="form-checkbox">
+    <label>
+      <input type="checkbox" checked="checked">
+      Available for hire
+    </label>
+    <p class="note">
+      This will do insanely <strong>awesome</strong> and <strong>amazing</strong> things!
+    </p>
+  </div>
+</form></div><div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-checkbox"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">checked=</span><span class="s">"checked"</span><span class="nt">&gt;</span>
+      Available for hire
+    <span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"note"</span><span class="nt">&gt;</span>
+      This will do insanely <span class="nt">&lt;strong&gt;</span>awesome<span class="nt">&lt;/strong&gt;</span> and <span class="nt">&lt;strong&gt;</span>amazing<span class="nt">&lt;/strong&gt;</span> things!
+    <span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span></code></pre></div>
+
+
+You may also add emphasis to the label:
+
+
+<div class="docs-example clearfix"><form>
+  <div class="form-checkbox">
+    <label>
+      <input type="checkbox" checked="checked">
+      <em class="highlight">Available for hire</em>
+    </label>
+  </div>
+</form></div><div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-checkbox"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">checked=</span><span class="s">"checked"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;em</span> <span class="na">class=</span><span class="s">"highlight"</span><span class="nt">&gt;</span>Available for hire<span class="nt">&lt;/em&gt;</span>
+    <span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span></code></pre></div>
+
+
+## Input group
+
+Attached an input and button to one another.
+
+
+<div class="docs-example clearfix"><form>
+  <div class="input-group">
+    <input type="text" placeholder="Username">
+    <span class="input-group-button">
+      <button class="btn">
+        <span class="octicon octicon-clippy"></span>
+      </button>
+    </span>
+  </div>
+</form></div><div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-group"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">"Username"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"input-group-button"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"octicon octicon-clippy"</span><span class="nt">&gt;&lt;/span&gt;</span>
+      <span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span></code></pre></div>
+
+
+## Form actions
+
+Align buttons to the right—via `float: right` on the buttons—in forms with `.form-actions`. The floats are automatically cleared for you.
+
+
+<div class="docs-example clearfix"><div class="form-actions">
+  <button type="button" class="btn btn-primary">Save changes</button>
+  <button type="button" class="btn">Cancel</button>
+</div></div><div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-actions"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span><span class="nt">&gt;</span>Save changes<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn"</span><span class="nt">&gt;</span>Cancel<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+ -->
+
+
+      </div>
+
+      <footer class="footer">
+        <div class="container">
+          Copyright City of Oakland 2015.<br>
+          Currently v2.3.3.<br>
+          &nbsp;<br>
+          Forked from GitHub Primer by Objective Subject. 
+        </div>
+      </footer>
+
+    </main>
+
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+    <script src="../js/jquery.min.js"></script>
+    <script>
+      if ( ! window.jQuery ) {
+        document.write('script src="../js/jquery.min.js"><\/script>');
+      }
+    </script>
+    <script src="../js/jquery.waypoints.min.js"></script>
+    <script src="../js/oakland.js"></script>    
+    <script src="../js/docs.js"></script>
+
+  </body>
+</html>
